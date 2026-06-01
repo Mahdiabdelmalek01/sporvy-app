@@ -43,7 +43,7 @@ export default function HostEventPage() {
               { step: '1', label: 'Document review', desc: 'Our compliance team checks your insurance, permits, and credentials.', status: 'In progress', color: 'text-amber-500' },
               { step: '2', label: 'Credential verification', desc: 'We verify your organisation and event history.', status: 'Pending', color: 'text-gray-400' },
               { step: '3', label: 'Safety assessment', desc: 'Course/venue safety assessment completed.', status: 'Pending', color: 'text-gray-400' },
-              { step: '4', label: 'Approval & publish', desc: 'Once approved, your event goes live on AthleteHub.', status: 'Pending', color: 'text-gray-400' },
+              { step: '4', label: 'Approval & publish', desc: 'Once approved, your event goes live on Sporvy.', status: 'Pending', color: 'text-gray-400' },
             ].map((item) => (
               <div key={item.step} className="flex gap-4">
                 <div className="w-7 h-7 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold text-gray-500">{item.step}</div>
@@ -86,10 +86,10 @@ export default function HostEventPage() {
       <div className="flex items-center gap-1 mb-8 overflow-x-auto">
         {steps.map((s, i) => (
           <div key={s} className="flex items-center gap-1 flex-shrink-0">
-            <div className={`flex items-center justify-center w-7 h-7 rounded-full text-xs font-semibold transition-all ${i === step ? 'bg-gray-900 text-white' : i < step ? 'bg-gray-200 text-gray-600' : 'bg-gray-100 text-gray-400'}`}>
+            <div className={`flex items-center justify-center w-7 h-7 rounded-full text-xs font-semibold transition-all ${i === step ? 'bg-lime-500 text-white' : i < step ? 'bg-gray-200 text-gray-600' : 'bg-gray-100 text-gray-400'}`}>
               {i < step ? <Check className="w-3.5 h-3.5" /> : i + 1}
             </div>
-            <span className={`text-xs font-medium ${i === step ? 'text-gray-900' : 'text-gray-400'}`}>{s}</span>
+            <span className={`text-xs font-medium ${i === step ? 'text-[#111827] font-semibold' : 'text-gray-400'}`}>{s}</span>
             {i < steps.length - 1 && <div className="w-4 h-px bg-gray-200 mx-0.5" />}
           </div>
         ))}
@@ -150,7 +150,7 @@ export default function HostEventPage() {
         <div className="space-y-4">
           <div className="bg-amber-50 border border-amber-100 rounded-xl p-4 text-sm text-amber-800">
             <p className="font-semibold mb-1">Why we verify credentials</p>
-            <p className="text-xs text-amber-700">AthleteHub is responsible for the safety of every athlete. We verify every event organiser before publishing to protect our community.</p>
+            <p className="text-xs text-amber-700">Sporvy is responsible for the safety of every athlete. We verify every event organiser before publishing to protect our community.</p>
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1.5">Organisation / Club name *</label>
@@ -258,7 +258,7 @@ export default function HostEventPage() {
           </div>
 
           <div className="bg-amber-50 border border-amber-100 rounded-xl p-4 text-xs text-amber-700">
-            By submitting, you confirm all information is accurate and agree to AthleteHub's Event Host Terms & Conditions. Your event will not go live until approved.
+            By submitting, you confirm all information is accurate and agree to Sporvy's Event Host Terms & Conditions. Your event will not go live until approved.
           </div>
 
           <div className="flex gap-3">

@@ -329,7 +329,7 @@ export default function EventsPage() {
             </div>
             <div>
               <h2 className="text-lg font-bold text-gray-900">Partner Brands</h2>
-              <p className="text-xs text-gray-500">Exclusive deals for AthleteHub members</p>
+              <p className="text-xs text-gray-500">Exclusive deals for Sporvy members</p>
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

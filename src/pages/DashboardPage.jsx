@@ -109,14 +109,14 @@ export default function DashboardPage() {
               <div className="w-16 h-16 relative">
                 <svg className="w-full h-full -rotate-90" viewBox="0 0 36 36">
                   <circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2.5" />
-                  <circle cx="18" cy="18" r="15.9" fill="none" stroke="white" strokeWidth="2.5"
+                  <circle cx="18" cy="18" r="15.9" fill="none" stroke="#84CC16" strokeWidth="2.5"
                     strokeDasharray={`${weekPct} 100`} strokeLinecap="round" />
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center text-xs font-semibold">{weekPct}%</div>
               </div>
             </div>
             <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
-              <div className="h-full bg-white rounded-full transition-all" style={{ width: `${weekPct}%` }} />
+              <div className="h-full bg-lime-400 rounded-full transition-all" style={{ width: `${weekPct}%` }} />
             </div>
             <p className="text-xs text-gray-400 mt-2">
               {stats.weeklyDone > stats.weeklyGoal ? `${stats.weeklyDone - stats.weeklyGoal} km above goal — great week!` : `${stats.weeklyGoal - stats.weeklyDone} km to reach your weekly goal`}

@@ -1,7 +1,18 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Activity, Calendar, Users, BarChart2, Menu, X, ChevronDown, User, LogOut, Settings, Trophy, Heart } from 'lucide-react';
+import { Users, BarChart2, Menu, X, User, LogOut, Settings, Trophy, Heart } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { user } from '../data/mockData';
+
+function SporvyMark() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="7" cy="11" r="3" fill="#84CC16" opacity="0.9" />
+      <circle cx="15" cy="11" r="3" fill="#84CC16" />
+      <path d="M10 11 Q11 7 14 9" stroke="#84CC16" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+      <path d="M18 9 L20 11 L18 13" stroke="#84CC16" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    </svg>
+  );
+}
 
 const navLinks = [
   { to: '/', label: 'Events' },
@@ -46,10 +57,10 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 bg-gray-900 rounded-xl flex items-center justify-center shadow-sm group-hover:bg-gray-800 transition-colors">
-              <Activity className="text-white" style={{ width: 22, height: 22 }} />
+            <div className="w-11 h-11 bg-[#111827] rounded-xl flex items-center justify-center shadow-sm group-hover:bg-gray-800 transition-colors">
+              <SporvyMark />
             </div>
-            <span className="text-[20px] font-bold tracking-tight text-gray-900">AthleteHub</span>
+            <span className="text-[20px] font-bold tracking-tight text-[#111827]">Sporvy</span>
           </Link>
 
           {/* Center nav — desktop */}
@@ -66,7 +77,7 @@ export default function Navbar() {
                 >
                   {label}
                   {active && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-5 h-0.5 bg-gray-900 rounded-full" />
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-5 h-0.5 bg-lime-500 rounded-full" />
                   )}
                 </Link>
               );
@@ -176,7 +187,7 @@ export default function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className={`flex items-center px-4 py-3 rounded-xl text-sm font-medium ${
                   location.pathname === to
-                    ? 'bg-gray-100 text-gray-900'
+                    ? 'bg-lime-50 text-[#111827] font-semibold'
                     : 'text-gray-600'
                 }`}
               >

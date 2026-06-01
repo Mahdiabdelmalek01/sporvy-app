@@ -576,7 +576,7 @@ export const sponsors = [
     tagline: 'Fuel world records. Fuel your race.',
     color: 'from-orange-50 to-amber-50',
     accent: 'text-orange-600',
-    deal: '15% off for AthleteHub members',
+    deal: '15% off for Sporvy members',
     code: 'ATHUB15',
     url: '#',
   },
