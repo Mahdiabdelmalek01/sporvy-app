@@ -6,10 +6,12 @@ import { user } from '../data/mockData';
 function SporvyMark() {
   return (
     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="7" cy="11" r="3" fill="#84CC16" opacity="0.9" />
-      <circle cx="15" cy="11" r="3" fill="#84CC16" />
-      <path d="M10 11 Q11 7 14 9" stroke="#84CC16" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-      <path d="M18 9 L20 11 L18 13" stroke="#84CC16" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      {/* Two people — community */}
+      <circle cx="6" cy="6" r="2.8" fill="#84CC16" opacity="0.85" />
+      <circle cx="16" cy="6" r="2.8" fill="#84CC16" />
+      {/* Heartbeat line — health */}
+      <path d="M1 15 L5 15 L7.5 9.5 L11 18 L14.5 9.5 L17 15 L21 15"
+        stroke="#84CC16" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
