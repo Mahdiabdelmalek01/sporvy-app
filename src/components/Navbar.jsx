@@ -6,12 +6,13 @@ import { user } from '../data/mockData';
 function SporvyMark() {
   return (
     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Two people — community */}
-      <circle cx="6" cy="6" r="2.8" fill="#84CC16" opacity="0.85" />
-      <circle cx="16" cy="6" r="2.8" fill="#84CC16" />
-      {/* Heartbeat line — health */}
-      <path d="M1 15 L5 15 L7.5 9.5 L11 18 L14.5 9.5 L17 15 L21 15"
-        stroke="#84CC16" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M1 11 L5 11 L7 8 L9 3 L11 19 L13 8 L15 11 L21 11"
+        stroke="#84CC16"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
