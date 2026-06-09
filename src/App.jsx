@@ -13,6 +13,9 @@ export default function App() {
     <AppProvider>
       <BrowserRouter>
         <div className="min-h-screen bg-gray-50">
+          <div className="bg-[#111827] text-white/70 text-xs text-center py-2 px-4">
+            🚧 <span className="font-medium text-white">Demo mode</span> — This is a prototype. All events, users, and data are simulated.
+          </div>
           <Navbar />
           <Routes>
             <Route path="/" element={<EventsPage />} />
