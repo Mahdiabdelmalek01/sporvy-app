@@ -124,10 +124,12 @@ export default function EventsPage() {
         <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=1400&q=80" alt="Hero" className="absolute inset-0 w-full h-full object-cover opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-gray-900" />
 
-        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 pt-16 pb-24 text-center">
-          <p className="text-white/70 text-sm font-medium uppercase tracking-widest mb-3">Find · Register · Compete</p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-3 leading-tight">Your next challenge<br />starts here</h1>
-          <p className="text-white/60 text-base mb-10">Marathons, triathlons, HYROX, skiing and more — worldwide</p>
+        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 pt-14 pb-24 text-center">
+          <span className="inline-flex items-center gap-2 bg-lime-500/20 border border-lime-500/30 text-lime-400 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5">
+            🇩🇪 Launching in Passau & Bavaria
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight">No athlete should<br />train alone.</h1>
+          <p className="text-white/60 text-base mb-10">Find your race. Find your crew. Share the finish line.</p>
 
           {/* Search bar */}
           <div className="max-w-xl mx-auto">
@@ -181,12 +183,34 @@ export default function EventsPage() {
               const active = selectedSport === label;
               return (
                 <button key={label} onClick={() => setSelectedSport(label)}
-                  className={`flex-shrink-0 flex flex-col items-center gap-1.5 px-5 py-4 text-xs font-medium border-b-2 transition-all whitespace-nowrap ${active ? 'border-gray-900 text-gray-900' : 'border-transparent text-gray-400 hover:text-gray-700 hover:border-gray-300'}`}>
+                  className={`flex-shrink-0 flex flex-col items-center gap-1.5 px-5 py-4 text-xs font-medium border-b-2 transition-all whitespace-nowrap ${active ? 'border-lime-500 text-gray-900' : 'border-transparent text-gray-400 hover:text-gray-700 hover:border-gray-300'}`}>
                   <span className="text-2xl">{emoji}</span>
                   {label}
                 </button>
               );
             })}
+          </div>
+        </div>
+      </div>
+
+      {/* ─── How it works ────────────────────────────────────────── */}
+      <div className="bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {[
+              { step: '01', icon: '🔍', title: 'Find & Register', desc: 'One place for all sports events — real-time availability and deadline alerts. Never miss a race again.' },
+              { step: '02', icon: '👥', title: 'Train Together', desc: 'Join groups training for your event. From Passau to Munich — find people going to the same start line.' },
+              { step: '03', icon: '🏅', title: 'Share the Moment', desc: 'Cross the finish line and post your achievement card straight to Instagram. Every post spreads Sporvy for free.' },
+            ].map(({ step, icon, title, desc }) => (
+              <div key={step} className="flex gap-4">
+                <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-lime-50 flex items-center justify-center text-lg">{icon}</div>
+                <div>
+                  <p className="text-[10px] font-bold text-lime-600 uppercase tracking-widest mb-0.5">{step}</p>
+                  <p className="text-sm font-semibold text-gray-900 mb-1">{title}</p>
+                  <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
