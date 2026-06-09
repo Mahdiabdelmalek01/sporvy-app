@@ -128,8 +128,8 @@ export default function EventsPage() {
           <span className="inline-flex items-center gap-2 bg-lime-500/20 border border-lime-500/30 text-lime-400 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5">
             🇩🇪 Launching in Passau & Bavaria
           </span>
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight">No athlete should<br />train alone.</h1>
-          <p className="text-white/60 text-base mb-10">Find your race. Find your crew. Share the finish line.</p>
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-3 leading-tight">Your next challenge<br />starts here</h1>
+          <p className="text-white/60 text-base mb-10">Marathons, triathlons, HYROX, skiing and more — worldwide</p>
 
           {/* Search bar */}
           <div className="max-w-xl mx-auto">
