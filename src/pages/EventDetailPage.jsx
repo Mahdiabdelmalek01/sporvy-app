@@ -419,6 +419,11 @@ export default function EventDetailPage() {
                   <Check className="w-3.5 h-3.5" /> Registered
                 </span>
               )}
+              {event.registrationClosed && !registered && (
+                <span className="bg-red-500/90 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full">
+                  Registration Closed
+                </span>
+              )}
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2">{event.name}</h1>
             <div className="flex flex-wrap items-center gap-4 text-white/70 text-sm">
@@ -665,6 +670,15 @@ export default function EventDetailPage() {
                 <div className="w-full bg-green-50 text-green-700 border border-green-100 py-3.5 rounded-xl text-sm font-semibold text-center flex items-center justify-center gap-2">
                   <Check className="w-4 h-4" /> You're registered
                 </div>
+              ) : event.registrationClosed ? (
+                <>
+                  <div className="w-full bg-red-50 text-red-600 border border-red-100 py-3.5 rounded-xl text-sm font-semibold text-center mb-3">
+                    Registration Closed
+                  </div>
+                  <p className="text-xs text-gray-400 text-center">
+                    Deadline was {new Date(event.registrationDeadline).toLocaleDateString('en-GB', { day: 'numeric', month: 'long' })} · Set an alert for next year
+                  </p>
+                </>
               ) : (
                 <>
                   <button
