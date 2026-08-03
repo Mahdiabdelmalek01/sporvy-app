@@ -52,6 +52,7 @@ Pull athletes away from Instagram. Show them events **before** deadlines, not af
 - "X people from Passau going" — social proof counter
 - Eco badge if equipment sharing is available at the event
 - Save button (triggers email reminder flow)
+-mention the booking.com 
 
 **Event Detail Page**
 - Full event info
