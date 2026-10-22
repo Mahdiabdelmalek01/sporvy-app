@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Self-hosted: loading from fonts.googleapis.com sends every visitor's IP to
+   Google, which LG München I (3 O 17493/20) held unlawful without consent. */
+@import '@fontsource/inter/300.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
 
 @tailwind base;
 @tailwind components;
