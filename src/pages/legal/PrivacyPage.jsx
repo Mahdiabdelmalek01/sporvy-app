@@ -127,7 +127,7 @@ export default function PrivacyPage() {
       <UL>
         <li>
           <strong>Supabase Inc.</strong> (USA): database, login, file storage and account deletion.
-          Your data is stored in the region <Value value={DATABASE_REGION} label="Supabase project region" />.
+          Your data is stored in the EU, in the region <Value value={DATABASE_REGION} label="Supabase project region" />.
         </li>
         <li>
           <strong>Vercel Inc.</strong> (USA): hosting of this website and of the web app.
