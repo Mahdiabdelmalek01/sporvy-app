@@ -35,12 +35,36 @@ export default function PrivacyPage() {
         </li>
       </UL>
       <P>
-        We send you emails only for your account: confirming your email address and resetting your
-        password. We do not send newsletters or marketing.
-      </P>
-      <P>
         <strong>Legal basis:</strong> Art. 6(1)(b) GDPR. We need this data to provide the account you
         asked for.
+      </P>
+
+      <H3>Emails we send you</H3>
+      <UL>
+        <li>
+          <strong>Account emails:</strong> confirming your email address and resetting your password.
+        </li>
+        <li>
+          <strong>Activity emails:</strong> when someone asks you to train together for a race, when
+          someone accepts your request, and when a group organiser lets you in from a waiting list.
+        </li>
+        <li>
+          <strong>Weekly email:</strong> once a week, on Thursday evening, new races within 200 km of
+          the city in your profile (in your sports) and new training groups near you for races you are
+          doing. It is sent only in weeks when there is something new.
+        </li>
+      </UL>
+      <P>
+        Activity and weekly emails are switched on when you sign up. You can switch each kind off at
+        any time in the app under Settings, or with the unsubscribe link at the bottom of every such
+        email. We never send emails about chat messages, and we do not send advertising for anyone
+        else. To avoid sending the same thing twice, we keep a record of which races and groups we have
+        already emailed you about.
+      </P>
+      <P>
+        <strong>Legal basis:</strong> Art. 6(1)(b) GDPR for account and activity emails, which are part
+        of the service you use. For the weekly email: <Fill>Art. 6(1)(f) GDPR and Section 7 UWG, or
+        consent (Art. 6(1)(a)): to be confirmed in the legal review</Fill>.
       </P>
 
       <H2 id="profile">3. Your athlete profile</H2>
@@ -94,30 +118,51 @@ export default function PrivacyPage() {
         (Section 25(1) TDDDG, Art. 6(1)(a) GDPR).
       </P>
 
-      <H2 id="activity">4. Races and training groups</H2>
+      <H2 id="activity">4. Races, groups, training partners and messages</H2>
       <P>When you use the app we store:</P>
       <UL>
         <li>
-          Races you mark as <em>going</em> or <em>entered</em>. This is a note in Sporvy only. It does
-          not register you with the race organiser. Registration and payment for a race happen on the
-          organiser's own website, under the organiser's own privacy policy.
+          Races you mark as <em>going</em> or <em>entered</em>. Once the race date has passed, they are
+          shown as races you raced. This is a note in Sporvy only. It does not register you with the race organiser. Registration and payment for a
+          race happen on the organiser's own website, under the organiser's own privacy policy.
         </li>
-        <li>Training groups you create or join.</li>
+        <li>Training groups you create or join, and waiting lists you join for full groups.</li>
+        <li>
+          Training partner requests you send or receive for a race, and whether they were accepted.
+        </li>
+        <li>
+          Messages you write in a group chat or to a training partner, with the time they were sent.
+        </li>
       </UL>
       <P>
         <strong>Legal basis:</strong> Art. 6(1)(b) GDPR.
       </P>
 
       <H2 id="visibility">5. What other people can see</H2>
+      <P>Sporvy is for meeting other athletes, so some of your data is visible to other users:</P>
       <UL>
         <li>
-          Other signed-in users see <strong>how many</strong> people are going to a race and how many
-          members a group has. The app does not show them who those people are.
+          <strong>Your athlete page</strong>, visible to all signed-in users: your name, photo, city,
+          fitness level, bio, sports and goals, the races you are going to, have entered or have
+          raced, and the groups you are in. Your gender and birth year are not shown.
         </li>
         <li>
-          A training group you create (its name, description, sport, level and linked race) is
-          visible to all signed-in users. If you delete your account, the group remains so its other
-          members keep it, but it is no longer linked to you.
+          <strong>Races:</strong> signed-in users see who is going to or has entered a race, so they
+          can find training partners.
+        </li>
+        <li>
+          <strong>Groups:</strong> signed-in users see a group's members and its waiting list. A group
+          you create (its name, description, sport, level and linked race) is visible to all
+          signed-in users.
+        </li>
+        <li>
+          <strong>Group chat:</strong> only the members of a group can read its chat. The group's
+          organiser can delete messages in it.
+        </li>
+        <li>
+          <strong>Training partners:</strong> a request is visible only to the two people involved.
+          Messages between training partners can be read only by the two of them. If either of you
+          ends the partnership, the conversation is deleted.
         </li>
         <li>
           Your profile photo is stored at a web address that is not listed anywhere but is not
@@ -125,9 +170,8 @@ export default function PrivacyPage() {
         </li>
       </UL>
       <P>
-        The app does not currently show your profile to other users. If we add features that do, such
-        as finding training partners, we will update this policy and tell you in the app before the
-        feature goes live.
+        Apart from the photo address above, nothing about you is visible to people who are not signed
+        in to Sporvy.
       </P>
 
       <H2 id="technical">6. Technical data</H2>
@@ -167,8 +211,8 @@ export default function PrivacyPage() {
           <strong>Vercel Inc.</strong> (USA): hosting of this website and of the web app.
         </li>
         <li>
-          <strong><Value value={EMAIL_PROVIDER} label="Email provider" /></strong>: sending account
-          emails.
+          <strong><Value value={EMAIL_PROVIDER} label="Email provider" /></strong>: sending the emails
+          described in section 2. It receives your email address and the content of each email.
         </li>
       </UL>
       <P>
@@ -187,11 +231,14 @@ export default function PrivacyPage() {
 
       <H2 id="retention">9. How long we keep data</H2>
       <P>
-        We keep your account, profile, races and group memberships for as long as you have an account.
+        We keep your account and the data described above for as long as you have an account. You can
+        delete your own messages at any time.
       </P>
       <P>
-        When you delete your account, your login, profile, profile photo, race list and group
-        memberships are deleted immediately. Copies in database backups are overwritten within{' '}
+        When you delete your account, your login, profile, profile photo, races, group memberships,
+        waiting-list places, training partner requests, the messages you wrote, your email settings
+        and the record of emails sent to you are deleted immediately. Groups you created remain so
+        their other members keep them, but they are no longer linked to you. Copies in database backups are overwritten within{' '}
         <Value value={BACKUP_RETENTION} label="backup retention period" />. Server logs are deleted
         after <Fill>log retention period</Fill>.
       </P>
