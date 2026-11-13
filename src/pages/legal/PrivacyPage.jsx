@@ -60,6 +60,40 @@ export default function PrivacyPage() {
         <strong>Legal basis:</strong> Art. 6(1)(b) GDPR.
       </P>
 
+      <H3>Finding places on the map</H3>
+      <P>
+        To work out how far a race is from you, our server looks up the city in your profile and the
+        town of each race on a map. It sends only the place name as it was typed (for example
+        "Passau"), never your name, email address or anything else about you. The request comes from
+        our server, not from your device, so the services do not see your IP address. We use:
+      </P>
+      <UL>
+        <li>
+          <strong>Nominatim</strong>, run by the OpenStreetMap Foundation (United Kingdom), and
+        </li>
+        <li>
+          <strong>Photon</strong>, run by komoot GmbH (Germany), when Nominatim does not answer.
+        </li>
+      </UL>
+      <P>
+        We store the map point found for the place name and look it up again only when the name
+        changes. If you remove or change your city, the old point is deleted at once.
+      </P>
+
+      <H3>Near me</H3>
+      <P>
+        The <em>Near me</em> filter in the app shows races within 200 km. If you allow it, your browser
+        gives the app your current location. The distances are calculated on your device only: your
+        location is never sent to us or to anyone else, and it is not stored. If you do not allow it,
+        the app uses the city in your profile instead. You can withdraw the permission at any time in
+        your browser's settings.
+      </P>
+      <P>
+        <strong>Legal basis:</strong> Art. 6(1)(b) GDPR for looking up places, which is needed to
+        suggest races near you. Using your device's location requires your permission in the browser
+        (Section 25(1) TDDDG, Art. 6(1)(a) GDPR).
+      </P>
+
       <H2 id="activity">4. Races and training groups</H2>
       <P>When you use the app we store:</P>
       <UL>
@@ -141,6 +175,10 @@ export default function PrivacyPage() {
         Because these companies are based in the USA, access to data from the USA cannot be ruled out.
         Such transfers are protected by <Fill>EU–US Data Privacy Framework certification and/or EU
         Standard Contractual Clauses: confirm for each provider</Fill>.
+      </P>
+      <P>
+        The map services named in section 3 (OpenStreetMap Foundation and komoot GmbH) receive only
+        place names, never data about you.
       </P>
       <P>
         If you install the app from Google Play, Google processes data about the download as an
