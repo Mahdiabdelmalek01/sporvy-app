@@ -25,4 +25,4 @@ export const DATABASE_REGION = 'West EU (Ireland)';
 export const EMAIL_PROVIDER = 'Resend Inc. (USA)'; // sends as noreply@sporvy.de
 
 // How long Supabase keeps database backups on the current plan.
-export const BACKUP_RETENTION = null;
+export const BACKUP_RETENTION = '7 days'; // Supabase Pro keeps 7 days; the Free plan keeps none, so this is true on both

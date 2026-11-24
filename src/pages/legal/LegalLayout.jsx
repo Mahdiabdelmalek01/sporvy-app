@@ -94,7 +94,7 @@ export function LegalFooter() {
         <span>© Sporvy</span>
         <Link to="/impressum" className="hover:text-gray-900">Impressum</Link>
         <Link to="/privacy" className="hover:text-gray-900">Privacy Policy</Link>
-        <Link to="/terms" className="hover:text-gray-900">Terms of Service</Link>
+        <Link to="/terms" className="hover:text-gray-900">Terms of Use</Link>
       </div>
     </footer>
   );

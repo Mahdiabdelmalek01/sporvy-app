@@ -1,60 +1,57 @@
 # Legal pages: before publishing
 
 Branch `legal-pages-draft` adds `/privacy`, `/terms` and `/impressum`. They are
-**drafts written by an AI from the app's code**, not legal advice. Nothing here
-is live until this branch is merged and deployed.
+**drafts written by an AI from the app's code (updated 2026-11-24)**, not legal
+advice. Nothing here is live until this branch is merged and deployed.
 
-## 1. Blockers (the pages are false or unlawful until these are done)
+The terms text is shared with the app: `src/pages/legal/termsContent.js` here
+and `src/content/terms.js` in sporvy-mobile are word for word the same. Change
+both together.
 
-- [ ] **`support@sporvy.de` cannot receive mail.** `sporvy.de` has no MX record
-      (checked 2026-10-23). Every page, and the app's own delete-account error
-      message, points users there. Set up forwarding at checkdomain, then send a
-      test email to it.
-- [ ] **Fill every highlighted gap** in `src/pages/legal/legalConfig.js`: name,
-      postal address, phone or contact form, Supabase region, email provider,
-      backup retention. The Impressum needs an address where post is actually
-      received. If you don't want your home address public, look at an
-      Impressum/c/o address service.
-- [ ] **Sign the data processing agreements.** Supabase: dashboard → Legal
-      documents (DPA). Vercel: part of its terms, but check the plan you're on.
-      Then fill the transfer-mechanism gap in section 8 of the privacy policy
-      (DPF certification and/or SCCs, per provider).
-- [ ] **Log retention** (privacy section 9): check Supabase and Vercel for your plan.
+## 1. Must do before publishing (the pages are false until these are done)
 
-## 2. Decisions for you
+- [ ] **`support@sporvy.de` must receive mail.** Every page and the app point
+      there. Set up forwarding at checkdomain, then send yourself a test.
+- [ ] **Supabase DPA:** dashboard → Organization → Legal documents → request
+      and sign the DPA. Vercel's and Resend's DPAs are part of their terms
+      (check the plan you're on). Privacy §8 relies on these.
+- [ ] **Heart rate consent** (privacy §4, highlighted). Average heart rate in
+      My training can be health data (Art. 9 GDPR). Either the app asks once
+      ("I agree that Sporvy stores my heart rate and shows it to partners I
+      share with") before the first one is saved, or the field is removed.
+      Then delete the highlighted sentence.
+- [ ] **Reports older than 12 months** must be deleted (privacy §9). Needs a
+      small cron job (an additive migration) or a calendar reminder to delete
+      them by hand.
+- [ ] **Telling people when you act on a report** (terms §6, privacy §4,
+      DSA Art. 17): when you remove someone's content or account, email them
+      what you did and why. Keep a short note of each decision.
 
-- **Gender, birth year and fitness level are mandatory in onboarding**
-  (`OnboardingScreen.js:91`), but nothing in the app uses them yet. GDPR's data
-  minimisation principle makes "required, for a feature we haven't built" hard
-  to defend. Simplest fix: make gender optional in the app.
-- **Age 16+ is stated but not enforced.** Onboarding accepts any birth year. A
-  check against the birth year already collected would make it true.
-- **The website loads 19 photos from images.unsplash.com**, which sends each
-  visitor's IP address to Unsplash (USA). Either self-host them (their licence
-  allows it) or add Unsplash to section 8. The fonts were already moved off
-  Google for this reason.
-- **Language.** The drafts are in English, like the app. A German version of
-  the privacy policy is advisable for German users.
-- **Profiles RLS.** The policy says the app does not show your profile to
-  others. Confirm in the SQL editor who can `SELECT` from `profiles`. If every
-  signed-in user can, the sentence is true of the UI but not of the API.
+## 2. Worth deciding
 
-## 3. Have it checked
+- **Your home address is public** in the Impressum. That is the law for a
+  German service. If you'd rather not, an Impressum/c-o address service
+  (~€10–20/month) gives you an address where post is received for you.
+- **German version** of the privacy policy: advisable once you have German
+  users who don't read English. The Impressum is already in German.
+- **Unsplash photos on www.sporvy.de** are now disclosed (privacy §8).
+  Self-hosting them would let you delete that paragraph.
+- If you register a business (Gewerbe) or get a VAT ID, add it to
+  `legalConfig.js`.
 
-Give the three pages to someone competent: the Uni Passau law clinic, IHK
-Niederbayern's founder advice, or a Datenschutz generator (e.g. eRecht24)
-for comparison. Things worth asking about specifically:
+## 3. Free checks instead of a lawyer
 
-- Whether self-reported fitness level counts as health data (Art. 9 GDPR).
-  The draft assumes it doesn't.
-- The liability clause (Terms §6) and the change clause (Terms §8).
+- Compare with a generator: datenschutz-generator.de (Dr. Schwenke) or
+  eRecht24's free Impressum generator.
+- Uni Passau: ask the law faculty's student legal advice / founder support
+  (Gründungsberatung) for a quick read.
+- IHK Niederbayern offers free first consultations for founders.
 
 ## 4. Publish
 
 1. Set `DRAFT = false` and `LAST_UPDATED` in `legalConfig.js`.
-2. Merge to `main` and deploy as usual.
+2. Merge to `main` and deploy as usual (needs Mahdi's go).
 3. Check `https://www.sporvy.de/privacy`, `/terms` and `/impressum` load
-   directly, and so does a refresh on `/groups`. Before this branch every deep
-   link 404'd; `vercel.json` adds the SPA rewrite (`/:path*`, not `/(.*)`).
-   If the Vercel project deploys from `dist/` rather than building the repo,
-   `vercel.json` must be copied into `dist/` instead.
+   directly, and so does a refresh on `/groups` (`vercel.json` adds the SPA
+   rewrite; if Vercel deploys from `dist/`, copy it there).
+4. Put `https://www.sporvy.de/privacy` in App Store Connect and Google Play.
