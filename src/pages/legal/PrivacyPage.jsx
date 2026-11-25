@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import LegalLayout, { Fill, H2, H3, OperatorAddress, P, UL, Value } from './LegalLayout';
+import LegalLayout, { H2, H3, OperatorAddress, P, UL, Value } from './LegalLayout';
 import { BACKUP_RETENTION, DATABASE_REGION, EMAIL_PROVIDER, OPERATOR } from './legalConfig';
 
 const mail = <a className="text-gray-900 underline" href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a>;
@@ -181,7 +181,7 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>My training:</strong> sessions you log (date, sport, type, how it felt, an optional
-          note, and optional numbers such as distance, time, elevation and average heart rate), and
+          note, and optional numbers such as distance, time and elevation), and
           which training partners you share each one with.
         </li>
         <li>Training partner requests you send or receive for a race, and whether they were accepted.</li>
@@ -191,17 +191,6 @@ export default function PrivacyPage() {
       </UL>
       <P>
         <strong>Legal basis:</strong> Art. 6(1)(b) GDPR.
-      </P>
-
-      <H3>Heart rate</H3>
-      <P>
-        Average heart rate is optional. Because it can say something about your health, it may count as
-        health data (Art. 9 GDPR). We store it only if you enter it, show it only to you and to the
-        training partners you choose to share that session with (in the app, and in the email telling
-        them you logged it), and use it for nothing else.{' '}
-        <strong>Legal basis:</strong> your explicit consent (Art. 9(2)(a) GDPR), which you can withdraw
-        at any time by deleting the value or the session.{' '}
-        <Fill>The app must ask for this consent before the first heart rate is saved: see the review list</Fill>
       </P>
 
       <H3>Reports and blocks</H3>

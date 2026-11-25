@@ -17,10 +17,9 @@ and `src/content/terms.js` in sporvy-mobile are word for word the same
 
 These render as yellow `[...]` marks on the live page until fixed:
 
-- [ ] **Privacy §4, Heart rate:** "The app must ask for this consent before
-      the first heart rate is saved". The app does not ask yet (sporvy-mobile
-      has no consent step). Either build the consent step or remove the heart
-      rate field, then delete the `<Fill>` in `PrivacyPage.jsx`.
+- [x] Nothing left. Heart rate was removed from the privacy page on
+      2026-11-26 (Mahdi chose to drop the field from the app: sporvy-mobile
+      feature/review-fixes plus migration 2026-11-29-drop-heart-rate.sql).
 
 Everything else in `legalConfig.js` is filled in (operator, phone, database
 region, email provider, backup retention). `vatId` is empty on purpose and is
@@ -28,16 +27,14 @@ simply not shown.
 
 ## 1. Must do before publishing (the pages are false until these are done)
 
-- [ ] **`support@sporvy.de` must receive mail.** Every page and the app point
-      there. Set up forwarding at checkdomain, then send yourself a test.
+- [x] **`support@sporvy.de` receives mail** (ImprovMX forwarding, tested
+      2026-11-26).
 - [ ] **Supabase DPA:** dashboard → Organization → Legal documents → request
       and sign the DPA. Vercel's and Resend's DPAs are part of their terms
       (check the plan you're on). Privacy §8 relies on these.
-- [ ] **Heart rate consent** (privacy §4, highlighted). Average heart rate in
-      My training can be health data (Art. 9 GDPR). Either the app asks once
-      ("I agree that Sporvy stores my heart rate and shows it to partners I
-      share with") before the first one is saved, or the field is removed.
-      Then delete the highlighted sentence.
+- [ ] **Heart rate removed from the app** before or together with publishing,
+      since the page no longer mentions it (feature/review-fixes + migration
+      2026-11-29-drop-heart-rate.sql).
 - [ ] **Reports older than 12 months** must be deleted (privacy §9). Needs a
       small cron job (an additive migration) or a calendar reminder to delete
       them by hand.
