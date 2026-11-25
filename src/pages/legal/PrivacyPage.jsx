@@ -78,8 +78,9 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>Weekly email:</strong> once a week, on Thursday evening, new races within 200 km of
-          the city in your profile (in your sports) and new training groups for races you are doing. It
-          is sent only in weeks when there is something new.
+          the city in your profile (in your sports), and new training groups for races you are going to
+          or have entered whose organiser lives within 40 km of you. It is sent only in weeks when there
+          is something new.
         </li>
       </UL>
       <P>
@@ -140,8 +141,9 @@ export default function PrivacyPage() {
 
       <H3>Near me</H3>
       <P>
-        The <em>Near me</em> filter in the app shows races within 200 km. If you allow it, your device
-        gives the app your current location. The distances are calculated on your device only: your
+        The <em>Near me</em> filter in the app shows races within 200 km. In the web app at
+        app.sporvy.de, if you allow it, your browser gives the app your current location. The iPhone
+        and Android apps do not ask for your location at the moment and use the city in your profile. The distances are calculated on your device only: your
         location is never sent to us or to anyone else, and it is not stored. If you do not allow it,
         the app uses the city in your profile instead. You can withdraw the permission at any time in
         your device's or browser's settings.
@@ -184,6 +186,7 @@ export default function PrivacyPage() {
         </li>
         <li>Training partner requests you send or receive for a race, and whether they were accepted.</li>
         <li>Messages you write in a group chat or to a training partner, with the time they were sent.</li>
+        <li>When you last opened each chat, so the app can show you which ones have unread messages.</li>
         <li>Whether you have Sporvy+. Sporvy+ is free during the launch period, so we hold no payment data.</li>
       </UL>
       <P>
@@ -215,7 +218,8 @@ export default function PrivacyPage() {
         <li>
           <strong>A block</strong> stores who blocked whom. Only you see the people you have blocked;
           the person you block is not told. Blocking hides their group chat messages from you, ends a
-          training partnership between you (with its chat), and stops partner requests between you.
+          training partnership between you (with its chat), stops partner requests between you, and
+          hides you from each other in lists of people.
         </li>
       </UL>
       <P>
@@ -344,7 +348,7 @@ export default function PrivacyPage() {
       <P>
         When you delete your account, your login, profile, profile photo, races, group memberships,
         join requests, waiting-list places, session answers, training log, training partner requests,
-        the messages you wrote, the reports you made, your blocks, your email settings and the record
+        the messages you wrote, which chats you have read, the reports you made, your blocks, your email settings and the record
         of emails sent to you are deleted immediately. Before you delete your account, the app asks you
         to hand over any group you organise; if you do not, it passes to a co-organiser or the
         longest-standing member. Groups and sessions you created remain so their other members keep

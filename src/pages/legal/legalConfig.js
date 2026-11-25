@@ -3,9 +3,9 @@
 //
 // While DRAFT is true, every legal page carries a "not reviewed" banner and a
 // noindex tag. Set it to false only after the text has been read and checked.
-export const DRAFT = true;
+export const DRAFT = false;
 
-export const LAST_UPDATED = null; // e.g. '2026-11-01'
+export const LAST_UPDATED = '2026-11-26';
 
 export const OPERATOR = {
   name: 'Mohamed Mahdi Abdelmalek',          // full legal name of the person (or company) running Sporvy
