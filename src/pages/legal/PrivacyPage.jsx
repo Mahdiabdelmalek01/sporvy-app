@@ -195,7 +195,7 @@ export default function PrivacyPage() {
 
       <H3>Reports and blocks</H3>
       <P>
-        You can report a group, a group session or a chat message, and block any person.
+        You can report a person, a group, a group session or a chat message, and block any person. Every report is emailed to us at support@sporvy.de so we can look at it.
       </P>
       <UL>
         <li>
