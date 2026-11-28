@@ -1,3 +1,11 @@
 {
+  "redirects": [
+    { "source": "/", "destination": "https://app.sporvy.de/", "permanent": false },
+    { "source": "/events/:path*", "destination": "https://app.sporvy.de/", "permanent": false },
+    { "source": "/groups", "destination": "https://app.sporvy.de/", "permanent": false },
+    { "source": "/community", "destination": "https://app.sporvy.de/", "permanent": false },
+    { "source": "/dashboard", "destination": "https://app.sporvy.de/", "permanent": false },
+    { "source": "/host-event", "destination": "https://app.sporvy.de/", "permanent": false }
+  ],
   "rewrites": [{ "source": "/:path*", "destination": "/index.html" }]
 }
